@@ -1,0 +1,11 @@
+.footer__copyright{
+    width: 100%;
+    min-height: 20%;
+    font-size: var(--fs-sm);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(var(--dark-clr));
+    color: rgb(var(--light-clr));
+    padding: 1rem;
+}

@@ -1,0 +1,17 @@
+.action-btn{
+    border: none;
+}
+
+.action-btn input{
+    font-size: var(--fs-sm);
+    padding: .5em 1.5em;
+    border-radius: 8px;
+    background-color: var(--btn-dark-bg);
+    color: white;
+}
+
+.action-btn input:hover{
+    cursor: pointer;
+    background-color: var(--btn-light-bg);
+    color: black;
+}

@@ -1,0 +1,48 @@
+.company-header{
+    background-color: rgb(var(--light-clr));
+    /* background-color: var(--light-bg); */
+    width: 100vw;
+    min-height: 87px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.company__home{
+    margin: 1rem 1.5rem;
+    word-spacing: 1px;
+    letter-spacing: 5px;
+    font-size: var(--fs-md-2);
+    color: rgb(var(--primary-clr));
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.company__logout{
+    background-color: var(--btn-dark-bg);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 100px;
+    height: 40px;
+    margin-right: 1.5rem;
+    padding: 1.5rem;
+    color: white;
+    text-decoration: none;
+    border: 1px solid rgb(0 0 0 / .12);
+    border-radius: 5px;
+    margin-left: auto;
+}
+
+.company__logout:hover{
+    background-color: var(--btn-light-bg);
+    color: black;
+}
+
+.logout-symbol{
+    margin-left: .5rem;
+}
+
+.company__logout:hover .logout-symbol{
+    scale: 1.3;
+}

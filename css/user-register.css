@@ -1,0 +1,156 @@
+
+.body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-bg);
+}
+
+.container{
+    max-width: 700px;
+    width: 100%;
+    background-color: rgb(var(--light-clr));
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+
+.container .title{
+    font-size: var(--fs-md);
+    font-weight: 500;
+    position: relative;
+}
+
+.container .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    margin: -2px;
+    /* width: 30px; */
+    width: 100%;
+    background-color: rgb(var(--primary-clr));
+}
+
+.user-details{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0 12px 0;
+}
+
+.input-box{
+    margin-bottom: var(--fs-sm);
+    width: calc(100% / 2 - 20px);
+    margin-right: 20px;
+}
+
+.input-box input{
+    --valid: rgb(var(--primary-clr));
+    --invalid: red;
+
+    height: 45px;
+    width: 100%;
+    outline: none;
+    /* border-radius: 5px; */
+    border-radius: .3rem;
+    border: 1px solid rgb(var(--light-clr));
+    padding-left: 15px;
+    font-size: var(--fs-sm);
+    border-bottom-width: 2px;
+}
+
+/* .input-box textarea{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: .3rem;
+    border: 1px solid rgb(var(--light-clr));
+    padding-left: 15px;
+    font-size: var(--fs-sm);
+    border-bottom-width: 2px;
+} */
+
+/* .input-box input:focus, */
+.input-box input:valid{
+    border-color: var(--valid);
+}
+
+.input-box input:invalid{
+    border-color: var(--invalid);
+}
+
+.input-box input:placeholder-shown{
+    border-color: rgb(var(--light-clr));
+}
+
+.input-box .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.gender-details .gender-title{
+    font-size: var(--fs-md);
+    font-weight: 500;
+}
+
+.gender-details .category{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 14px 0;
+    
+}
+
+.gender-details .category label{
+    display: flex;
+    align-items: center;
+}
+
+.gender-details .category .dot{
+    height: 1.2rem;
+    width: 1.2rem;
+    background-color: rgb(var(--primary-clr) / .4);
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 5px solid transparent;
+    transition: all .3s ease;
+}
+
+#dot-1:checked ~ .category label .dot--male,
+#dot-2:checked ~ .category label .dot--female{
+    border-color: rgb(var(--primary-clr));
+    background-color: rgb(var(--light-clr));
+}
+
+form input[type=radio]{
+    display:none;
+}
+
+form .button{
+    height: 45px;
+    margin: 45px 0;
+    
+}
+
+form .button input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: rgb(var(--light-clr));
+    background-color: rgb(var(--primary-clr));
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    letter-spacing: 1px;
+    border: none;
+    
+    cursor: pointer;
+    color: white;
+    background-color: var(--btn-dark-bg);
+}
+
+form .button input:hover{
+    background-color: var(--btn-light-bg);
+    color: black;
+}

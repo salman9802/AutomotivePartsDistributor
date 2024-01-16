@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* CSS Reset */
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* CSS Variables */
+:root{
+    --light-clr: 236 240 241;
+    --dark-clr: 39 41 49;
+    --primary-clr: 43 128 62;
+    --light-bg: rgb(var(--primary-clr) / .4);
+
+    --fs-sm: 1rem; /* 16px */
+    --fs-md: 1.5rem; /* 24px */
+    --fs-md-2: 2.5rem; /* 40px */
+    --fs-lr: 3.75rem; /* 60px */
+    --fs-title: 5.6rem; /* 90px */
+
+    --btn-dark-bg: rgb(var(--primary-clr) / .5);
+    --btn-light-bg: rgb(var(--primary-clr) / .1);
+
+    --success-bg: rgb(92 184 92 / .3);
+    --success-clr: green;
+    --danger-bg: rgb(217 83 79 / .3);;
+    --danger-clr: brown;;
+}

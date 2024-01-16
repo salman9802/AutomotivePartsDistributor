@@ -1,0 +1,120 @@
+CREATE TABLE `automotivepartsdistributor`.`users` ( 
+    `id` INT NOT NULL AUTO_INCREMENT , 
+    `username` VARCHAR(255) NOT NULL , 
+    `password` VARCHAR(255) NOT NULL , 
+    `email` VARCHAR(255) NOT NULL , 
+    `mobile` VARCHAR(10) NOT NULL , 
+    `address` TEXT NOT NULL , 
+    `gender` VARCHAR(6) NOT NULL , 
+    PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+CREATE TABLE `automotivepartsdistributor`.`parts` ( 
+    `id` INT NOT NULL AUTO_INCREMENT , 
+    `brand` VARCHAR(255) NOT NULL , 
+    `model` VARCHAR(255) NOT NULL , 
+    `type` VARCHAR(255) NOT NULL , 
+    `name` TEXT NOT NULL , 
+    `price` INT(7) NOT NULL , 
+    `image` VARCHAR(255) NOT NULL , 
+    `status` VARCHAR(255) NOT NULL , 
+    PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+CREATE TABLE `automotivepartsdistributor`.`carts` (
+    `id` INT NOT NULL AUTO_INCREMENT,
+    `user_id` INT NOT NULL,
+    `part_id` INT NOT NULL,
+    PRIMARY KEY(`id`),
+    FOREIGN KEY(`user_id`) REFERENCES `users`(`id`),
+    FOREIGN KEY(`part_id`) REFERENCES `parts`(`id`)
+) ENGINE = InnoDB;
+
+ALTER TABLE carts ADD COLUMN quantity INT(6);
+UPDATE carts SET quantity = 0;
+
+SELECT 
+parts.brand AS brand, 
+parts.model AS model,
+parts.name AS name, 
+parts.price AS price, 
+carts.quantity AS quantity 
+FROM 
+carts
+INNER JOIN
+parts
+ON carts.part_id = parts.id
+WHERE carts.user_id = :user_id;
+
+CREATE TABLE sales(
+	id INT NOT NULL AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    part_id INT NOT NULL,
+    quantity INT NOT NULL,
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY(id),
+    FOREIGN KEY(user_id) REFERENCES users(id),
+    FOREIGN KEY(part_id) REFERENCES parts(id)
+);
+
+CREATE TABLE company(
+	id VARCHAR(255) UNIQUE NOT NULL,
+    name VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    PRIMARY KEY(id)
+);
+
+INSERT INTO `company`(`id`, `name`, `password`) VALUES ('tata_123','Tata','tata_12345')
+INSERT INTO `company`(`id`, `name`, `password`) VALUES ('_123','','_12345');
+
+ALTER TABLE parts ADD COLUMN company_id VARCHAR(255) NOT NULL REFERENCES company(id);
+UPDATE parts SET company_id = 'tata_123' WHERE brand = 'tata';
+
+SELECT
+parts.id,
+parts.name,
+sales.quantity,
+parts.price
+FROM parts
+INNER JOIN sales
+ON parts.id = sales.part_id
+WHERE parts.company_id = :company_id;
+
+ALTER TABLE parts ADD COLUMN request BOOLEAN DEFAULT FALSE;
+
+CREATE TABLE `automotivepartsdistributor`.`admins` ( `id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(255) NOT NULL , `password` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`), UNIQUE (`name`)) ENGINE = InnoDB;
+INSERT INTO `admins`(`name`, `password`) VALUES ('admin','admin');
+
+SELECT 
+sales.part_id AS id, 
+parts.brand AS brand,
+parts.model AS model,
+parts.name AS name,
+parts.price AS price,
+SUM(sales.quantity) AS quantity 
+FROM sales 
+INNER JOIN parts
+ON sales.part_id = parts.id
+GROUP BY sales.part_id 
+ORDER BY sales.quantity DESC 
+LIMIT 1;
+
+SELECT
+sales.timestamp AS timestamp,
+users.username AS name,
+users.address AS address,
+users.mobile AS mobile
+FROM sales
+INNER JOIN
+users
+ON sales.user_id = users.id;
+
+SELECT
+parts.brand AS brand,
+parts.model AS model,
+parts.name AS name,
+parts.price AS price,
+sales.quantity AS quantity
+FROM parts
+INNER JOIN
+sales
+ON parts.id = sales.part_id
+WHERE sales.user_id = :user_id

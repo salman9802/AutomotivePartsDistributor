@@ -1,0 +1,33 @@
+form#pagination-form {
+    background-color: #fff;
+    height: 50px;
+    width: 80vw;
+}
+
+.pagination-btns {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+#prev-btn,
+#next-btn {
+    background-color: #333;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    padding: .5rem 1rem;
+    width: 150px;
+}
+
+#prev-btn:hover,
+#next-btn:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+#prev-btn[disabled],
+#next-btn[disabled] {
+    visibility: hidden;
+}

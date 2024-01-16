@@ -1,0 +1,86 @@
+.invoice{
+    width: 100vw;
+    height: 80vh;
+    margin: 3rem auto;
+}
+
+.invoice__table{
+    min-width: 80%;
+    min-height: 80%;
+    margin: 2rem auto;
+    border: 1px solid rgb(0 0 0 / .12);
+    border-collapse: collapse   ;
+}
+
+.invoice__table *{
+    border: 1px solid rgb(0 0 0 / .12);
+}
+
+.invoice__table caption{
+    background-color: rgb(var(--primary-clr) / .5);
+}
+
+th, td{
+    text-align: center;
+    padding: .5rem;
+    background-color: rgb(var(--light-clr));
+}
+
+.rupee{
+    border: none;
+}
+
+.invoice__amount{
+    font-size: var(--fs-md);
+    font-weight: 500;
+}
+
+.invoice__info{
+    font-size: var(--fs-md);
+    font-weight: 300;
+    padding: 0px;
+}
+
+.invoice__actions{
+    width: 80%;
+    height: 150px;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.invoice__btn{
+    background-color: var(--btn-dark-bg);
+    text-decoration: none;
+    color: white;
+    padding: .5rem 1.5rem;
+    border-radius: 5px;
+    border: 1px solid rgb(0 0 0 / .12);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+    font-size: inherit;
+}
+
+.invoice__btn:hover{
+    background-color: var(--btn-light-bg);
+    color: black;
+}
+
+.placed-order{
+    width: 100vw;
+    height: 10vh;
+    margin: 2rem auto;
+    background-color: var(--success-bg);
+    color: var(--success-clr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.not-success{
+    background-color: var(--danger-bg);
+    color: var(--danger-clr);
+}

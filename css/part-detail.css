@@ -1,0 +1,104 @@
+.part{
+    width: 80vw;
+    height: 80vh;
+    border: 1px solid rgb(0 0 0 / .12);
+    margin: 1.5rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.part__lhs,
+.part__rhs{
+    height: 100%;
+    width: 50%;
+}
+
+.part__lhs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid rgb(0 0 0 / .12);
+}
+
+.part__img{
+    display: block;
+    width: 80%;
+    height: 80%; 
+
+    object-fit: cover;
+    object-position: center;
+}
+
+.part__name,
+.part__price{
+    font-size: var(--fs-md);
+    font-weight: 900;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.part__details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.part__brand,
+.part__model,
+.part__type{
+    text-align: center;
+    /* background-color: red; */
+    margin: .5rem 1rem;
+    padding: .5rem 1.5rem;
+    font-size: var(--fs-sm);
+    text-transform: uppercase;
+}
+
+.part__brand span,
+.part__model span,
+.part__type span{
+    color: rgb(0 0 0 / .54);
+    margin-right: 1rem;
+}
+
+.part__price{
+    margin: 2rem;
+}
+
+.part__status{
+    margin: 1rem;
+    padding: 1rem;
+    height: 100px;
+    background-color: rgb(92 184 92 / .3);
+    border-radius: 5px;
+    color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.outofstock{
+    background-color: rgb(217 83 79 / .3);
+    color: brown;
+}
+
+.part__action{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.part__btn{
+    padding: 1rem 2rem;
+    border: 1px solid rgb(0 0 0 / .12);
+    background-color: var(--btn-dark-bg);
+    color: white;
+    border-radius: 5px;
+}
+
+.part__btn:hover{
+    background-color: var(--btn-light-bg);
+    color: black;
+}
