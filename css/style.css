@@ -10,6 +10,13 @@
     font-family: 'Roboto', sans-serif;
 }
 
+html,
+body {
+    /* width: 100vw; */
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 /* CSS Variables */
 :root{
     --light-clr: 236 240 241;

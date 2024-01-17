@@ -123,8 +123,9 @@
             <div class="invoice__actions">
                 <a id="btn-back" class="invoice__btn" href="account/cart.php"><span class="material-symbols-outlined">arrow_back</span>Back</a>
                 <!-- <a class="invoice__btn" onclick="window.print();">Place Order & Print Invoice</a> -->
-                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-                    <button name="placeOrder" class="invoice__btn" onclick="window.print();">Place Order & Print Invoice</button>
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" id="order-form">
+                    <!-- <button name="placeOrder" class="invoice__btn" onclick="window.print();">Place Order & Print Invoice</button> -->
+                    <button name="placeOrder" class="invoice__btn" onclick="orderInvoice(document.getElementsByTagName('html')[0])">Place Order & Print Invoice</button>
                 </form>
                 <!-- <a class="invoice__btn" onclick="print_invoice();">Place Order & Print Invoice</a> -->
                 <!-- <a id="btn-print" class="invoice__btn" href="javascript:document.getElementById('btn-back').style.display='none';document.getElementById('btn-print').style.display='none';window.print();">Place Order & Print Invoice</a> -->

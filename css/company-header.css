@@ -46,3 +46,44 @@
 .company__logout:hover .logout-symbol{
     scale: 1.3;
 }
+
+@media (max-width: 1024px) {
+    .company__home {
+        font-size: var(--fs-md);
+        margin: 1rem;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .company__home {
+        /* font-size: var(--fs-sm); */
+        margin: .5rem 1rem;
+        letter-spacing: 3px;
+    }
+}
+
+@media (max-width: 640px) {
+    /* .company__logout {
+        min-width: 50px;
+    } */
+    /* .user__cart {
+        width: 30px;
+        margin: 0 15px;
+    }
+
+    .user__account {
+        display: flex;
+        margin-left: 0px;
+    }
+
+    .user__account__circle {
+        font-size: 30px !important;
+    }
+
+    .user__account__arrow{
+        display: inline-block;
+        font-size: 30px !important;
+    }
+    */
+}

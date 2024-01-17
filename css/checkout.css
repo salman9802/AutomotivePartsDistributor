@@ -1,6 +1,6 @@
 .invoice{
     width: 100vw;
-    height: 80vh;
+    min-height: 80vh;
     margin: 3rem auto;
 }
 
@@ -83,4 +83,31 @@ th, td{
 .not-success{
     background-color: var(--danger-bg);
     color: var(--danger-clr);
+}
+
+@media (max-width: 1024px) { 
+    .invoice__table {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) { 
+    .invoice__table {
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) { 
+    .invoice__amount,
+    .invoice__info {
+        font-size: 1.25rem;
+    }
+
+    .invoice__actions {
+        flex-direction: column;
+    }
+
+    th, td {
+        padding: 5px;
+    }
 }

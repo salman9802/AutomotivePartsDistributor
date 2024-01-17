@@ -87,7 +87,7 @@
                     Your cart is empty.
                 </div>
                 <div class="empty-cart-desc">
-                    Looks like you have not added anything to your cart. Go head and buy something.
+                    Looks like you have not added anything to your cart. Go ahead and buy something.
                 </div>
             </div>
         <?php endif; ?>
@@ -117,7 +117,8 @@
                                     <input type="hidden" name="index" value="<?php echo $index ?>">
                                     <?php //echo isset($cart_item['quantity'])?$cart_item['quantity']:1;?>
                                     <!-- <?php //echo $cart_item['quantity'];?> -->
-                                    <input type="number" name="quantity" onchange="this.form.submit();" value="<?php echo isset($cart_item['quantity'])?$cart_item['quantity']:1; ?>" min="1" max="5" onKeypress="event.preventDefault();">
+                                    <input type="number" name="quantity" onchange="this.form.submit();" value="<?php echo isset($cart_item['quantity'])?$cart_item['quantity']:1; ?>" min="1" max="5">
+                                    <!-- <input type="number" name="quantity" onchange="this.form.submit();" value="<?php echo isset($cart_item['quantity'])?$cart_item['quantity']:1; ?>" min="1" max="5" onKeypress="event.preventDefault();"> -->
                                 </form>
                                 <!-- onchange="this.form.submit();"  -->
                                 <!-- onKeypress="event.preventDefault();" -->

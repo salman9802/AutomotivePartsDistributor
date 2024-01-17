@@ -1,12 +1,12 @@
 <?php
-    require('db/dbconnect.php');
-    if(isset($_GET['brand'])){
+    require('db/dbconnect.php'); // Connect to db
+    if(isset($_GET['brand'])){ // When Brand is selected
         $selected_brand = $_GET['brand'];
         $get_models->execute(['brand' => $selected_brand]);
         $models = $get_models->fetchAll();
-        if(isset($_GET['model'])){
+        if(isset($_GET['model'])){ // when Model is selected
             $selected_model = $_GET['model'];
-            if(isset($_GET['part'])){
+            if(isset($_GET['part'])){ // when Part is selected
                 $selected_part = $_GET['part'];
                 header("Location: parts/part-search.php?brand=$selected_brand&model=$selected_model&part=$selected_part");
             }

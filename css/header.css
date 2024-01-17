@@ -1,5 +1,5 @@
 .header{
-    width: 100%;
+    width: 100vw;
     height: 87px;
     /* background-color: rgb(var(--dark-clr)); */
     background-color: rgb(var(--light-clr));
@@ -24,6 +24,7 @@
 
 .user{
     margin-left: auto;
+    margin-right: 1.5rem;
     display: flex;
     align-items: center;
 }
@@ -121,4 +122,42 @@
 .sub-menu__link:hover {
     transform: translateX(5px);
     font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+    .logo {
+        font-size: var(--fs-md);
+        margin: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        /* font-size: var(--fs-sm); */
+        margin: .5rem 1rem;
+        letter-spacing: 3px;
+    }
+
+}
+
+@media (max-width: 640px) {
+    .user__cart {
+        width: 30px;
+        margin: 0 15px;
+        /* margin-right: 15px; */
+    }
+
+    .user__account {
+        display: flex;
+        margin-left: 0px;
+    }
+
+    .user__account__circle {
+        font-size: 30px !important;
+    }
+
+    .user__account__arrow{
+        display: inline-block;
+        font-size: 30px !important;
+    }
 }

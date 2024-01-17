@@ -16,6 +16,24 @@ function print_invoice(){
     // w.document.close();
 }
 
+// const form = document.getElementById('order-form');
+// form.addEventListener('submit', e => {
+//     e.preventDefault();
+//     // window.history.back();
+// })
+
+function orderInvoice(html) {
+    // var winPrint = window.open('', '', 'left=0,top=0,width=800,height=600,toolbar=0,scrollbars=0,status=0');
+    var winPrint = window.open();
+    // winPrint.document.write('<title>Print  Report</title><br /><br /> Hellow World');
+    // console.log(html);
+    winPrint.document.body.innerHTML = html.innerHTML;
+    winPrint.document.close();
+    winPrint.focus();
+    winPrint.print();
+    winPrint.close();
+}
+
 // function print_invoice(){
 //     var prtContent = document.getElementById("invoiceTable");
 //     var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');

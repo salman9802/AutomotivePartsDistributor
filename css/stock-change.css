@@ -1,6 +1,6 @@
 .stock-change{
     width: 100vw;
-    height: 80vh;
+    min-height: 80vh;
     border: 1px solid rgb(0 0 0 / .12);
     /* background-color: rgb(var(--light-clr));     */
 }
@@ -9,7 +9,7 @@
     margin: 2rem auto;
     border-collapse: collapse;
     min-height: 80%;
-    min-width: 80%;
+    width: 80%;
 }
 
 .stock__table *{
@@ -46,4 +46,26 @@ th, td{
 .request-btn input:hover{
     background-color: var(--btn-light-bg);
     color: black;
+}
+
+@media (max-width: 1024px) { 
+    .stock__table {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) { 
+    
+}
+
+@media (max-width: 640px) { 
+    tr, td {
+        padding: 0px;
+        font-size: .8rem;
+    }
+
+    .stock__table caption {
+        font-size: var(--fs-sm);
+    }
+
 }

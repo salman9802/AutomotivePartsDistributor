@@ -1,3 +1,5 @@
+
+
 .stock-change{
     width: 100vw;
     height: 80vh;
@@ -9,7 +11,7 @@
     margin: 2rem auto;
     border-collapse: collapse;
     min-height: 80%;
-    min-width: 80%;
+    width: 80%;
 }
 
 .sale__table *{
@@ -57,4 +59,25 @@ th, td{
 
 .search__element{
     padding: .5em 1.5em;
+}
+
+@media (max-width: 1024px) { 
+    .sale__table {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) { 
+
+}
+
+@media (max-width: 640px) { 
+    tr, td {
+        padding: 0px;
+        font-size: .8rem;
+    }
+
+    .sale__table caption {
+        font-size: var(--fs-sm);
+    }
 }
